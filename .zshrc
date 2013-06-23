@@ -34,6 +34,9 @@ ZSH_THEME="gentoo"
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+if [ -f $HOME/.zsh_local ]; then
+  source $HOME/.zsh_local
+fi
 export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/stepinto/.local/bin:/home/stepinto/bin
 alias gti=git
 export NODE_PATH=/usr/lib/node_modules
