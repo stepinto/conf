@@ -35,7 +35,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/bin
 alias gti=git
-export NODE_PATH=/usr/lib/node_modules
 
 # Customize to your needs...
 if [ -f $HOME/.zshrc_local ]; then
