@@ -34,10 +34,12 @@ ZSH_THEME="gentoo"
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/bin
+alias gti=git
+export NODE_PATH=/usr/lib/node_modules
+alias git="nocorrect git"
+alias tmux="tmux -2"
+
 if [ -f $HOME/.zshrc_local ]; then
   source $HOME/.zshrc_local
 fi
-export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/stepinto/.local/bin:/home/stepinto/bin
-alias gti=git
-export NODE_PATH=/usr/lib/node_modules
-
