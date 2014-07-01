@@ -36,3 +36,5 @@
     tool = vimdiff
 [core]
 	autocrlf = false
+[push]
+	default = simple
