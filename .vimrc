@@ -4,17 +4,18 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'majutsushi/tagbar'
-Plugin 'uarun/vim-protobuf'
-Plugin 'sprsquish/thrift.vim'
+Plugin 'bling/vim-airline'
 Plugin 'funorpain/vim-cpplint'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sprsquish/thrift.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'uarun/vim-protobuf'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,6 +38,10 @@ set t_AB=^[[48;5;%dm
 set t_AF=^[[38;5;%dm
 set term=xterm-256color
 let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_theme = 'powerlineish'
 
 " colorscheme solarized
 
@@ -48,3 +53,4 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
+
