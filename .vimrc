@@ -4,6 +4,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'funorpain/vim-cpplint'
@@ -11,6 +12,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'shougo/unite.vim'
+Plugin 'shougo/vimproc.vim'
+Plugin 'shougo/vimshell.vim'
 Plugin 'sprsquish/thrift.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -20,7 +24,9 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax on
+set t_Co=256
+set t_AB=^[[48;5;%dm
+set t_AF=^[[38;5;%dm
 
 set bg=dark
 set ruler
@@ -33,20 +39,19 @@ set bs=2
 set et
 set hlsearch
 set encoding=utf-8
-set t_Co=256
-set t_AB=^[[48;5;%dm
-set t_AF=^[[38;5;%dm
 set term=xterm-256color
-let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme = 'powerlineish'
+let g:vimshell_prompt = 'vimshell $ '
 
 " colorscheme solarized
+syntax on
 
 nmap <F7> :make<CR>:copen<CR><C-W><C-P>
 nmap <F8> :call Cpplint()<CR>
+nmap <F3> :Unite -start-insert file_rec/async:!<CR>
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
