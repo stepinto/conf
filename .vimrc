@@ -4,7 +4,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'funorpain/vim-cpplint'
@@ -52,6 +51,7 @@ syntax on
 nmap <F7> :make<CR>:copen<CR><C-W><C-P>
 nmap <F8> :call Cpplint()<CR>
 nmap <F3> :Unite -start-insert file_rec/async:!<CR>
+nmap gd :YcmCompleter GoTo<CR>
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *

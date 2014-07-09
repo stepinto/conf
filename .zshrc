@@ -40,6 +40,7 @@ export NODE_PATH=/usr/lib/node_modules
 alias git="nocorrect git"
 alias tmux="tmux -2"
 export EDITOR=/bin/vim
+alias vi=vim
 
 if [ -f $HOME/.zshrc_local ]; then
   source $HOME/.zshrc_local
