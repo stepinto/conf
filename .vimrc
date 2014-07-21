@@ -44,6 +44,7 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme = 'powerlineish'
 let g:vimshell_prompt = 'vimshell $ '
+let g:ycm_confirm_extra_conf = 0
 
 " colorscheme solarized
 syntax on
