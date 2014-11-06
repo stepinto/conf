@@ -38,3 +38,5 @@
 	autocrlf = false
 [push]
 	default = simple
+[http]
+	sslVerify = false
