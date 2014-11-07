@@ -14,7 +14,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/vimproc.vim'
 Plugin 'shougo/vimshell.vim'
+Plugin 'sjl/gundo.vim'
 Plugin 'sprsquish/thrift.vim'
+Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'uarun/vim-protobuf'
@@ -60,3 +62,9 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+" Let command mode support emacs style movemenet keys
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
