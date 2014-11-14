@@ -25,7 +25,6 @@
     st = status
     rb = rebase
     rbc = rebase --continue
-    rba = rebase --abort
     m = merge
     mt = mergetool
     lg = log --graph --decorate --date=local
