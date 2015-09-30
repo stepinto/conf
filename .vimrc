@@ -13,7 +13,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/vimproc.vim'
-Plugin 'shougo/vimshell.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'sprsquish/thrift.vim'
 Plugin 'tomasr/molokai'
@@ -21,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'uarun/vim-protobuf'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,27 +34,34 @@ set ruler
 set cindent
 set nocompatible
 set tags=tags;
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 set bs=2
 set et
+set nu
 set hlsearch
 set encoding=utf-8
 set term=xterm-256color
+set laststatus=2  " always show status bar
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme = 'powerlineish'
 let g:vimshell_prompt = 'vimshell $ '
 let g:ycm_confirm_extra_conf = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " colorscheme solarized
 syntax on
 
 nmap <F7> :make<CR>:copen<CR><C-W><C-P>
 nmap <F8> :call Cpplint()<CR>
-nmap <F3> :Unite -start-insert file_rec/async:!<CR>
+nmap <F3> :UniteWithProjectDir -start-insert file_rec/async:!<CR>
 nmap gd :YcmCompleter GoTo<CR>
+nmap cn :cnext<CR>
+nmap cp :cprev<CR>
+nmap gt :bnext<CR>
+nmap gT :bprev<CR>
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -68,3 +75,12 @@ cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+
+set makeprg=nice\ python\ /home/chaoshi/scons/scons.py\ -U\ -j24
+
+" Highlight current line
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#303000 ctermbg=234
