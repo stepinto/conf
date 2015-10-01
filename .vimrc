@@ -34,8 +34,8 @@ set ruler
 set cindent
 set nocompatible
 set tags=tags;
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 set bs=2
 set et
 set hlsearch

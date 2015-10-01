@@ -20,6 +20,7 @@
 	untracked = red bold
 [alias]
     ci = commit
+    ciam = commit -a --amend
     co = checkout
     br = branch
     st = status
