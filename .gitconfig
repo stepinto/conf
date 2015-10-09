@@ -1,6 +1,6 @@
 [user]
-	name = Chao Shi
-	email = stepinto@live.com
+	name = chao.shi
+	email = chao.shi@alibaba-inc.com
 [color]
 	diff = auto
 	status = auto
@@ -20,6 +20,7 @@
 	untracked = red bold
 [alias]
     ci = commit
+    cia = commit -a
     ciam = commit -a --amend
     co = checkout
     br = branch
@@ -40,3 +41,8 @@
 	default = simple
 [http]
 	sslVerify = false
+[init]
+	templatedir = /home/chaoshi/.git-core/templates
+[branch]
+    autosetuprebase = always
+
