@@ -41,7 +41,9 @@ set et
 set nu
 set hlsearch
 set encoding=utf-8
-set term=xterm-256color
+if !has('nvim')
+    set term=xterm-256color
+endif
 set laststatus=2  " always show status bar
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep = ''
@@ -76,7 +78,7 @@ cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
-set makeprg=nice\ python\ /home/chaoshi/scons/scons.py\ -U\ -j24
+" set makeprg=nice\ python\ /home/chaoshi/scons/scons.py\ -U\ -j24
 
 " Highlight current line
 set cursorline
@@ -84,3 +86,9 @@ hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
+
+" Enable python plugin in NeoVim
+if has('nvim')
+  runtime! plugin/python_setup.vim
+endif
+
