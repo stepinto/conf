@@ -5,7 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'funorpain/vim-cpplint'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'majutsushi/tagbar'
@@ -21,6 +22,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'uarun/vim-protobuf'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'file:///home/chaoshi/.vim/apsara_log'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,7 +51,7 @@ set laststatus=2  " always show status bar
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'powerlineish'
+" let g:airline_theme = 'powerlineish'
 let g:vimshell_prompt = 'vimshell $ '
 let g:ycm_confirm_extra_conf = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -78,7 +81,7 @@ cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
-" set makeprg=nice\ python\ /home/chaoshi/scons/scons.py\ -U\ -j24
+set makeprg=nice\ /usr/ali/bin/python\ /home/chaoshi/scons/scons.py\ -U\ -j24
 
 " Highlight current line
 set cursorline

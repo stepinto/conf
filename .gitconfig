@@ -31,6 +31,9 @@
     mt = mergetool
     lg = log --graph --decorate --date=local
     cp = cherry-pick
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
 [diff]
     tool = vimdiff
 [merge]
@@ -41,6 +44,7 @@
 	default = simple
 [http]
 	sslVerify = false
+	postBuffer = 524288000
 [init]
 	templatedir = /home/chaoshi/.git-core/templates
 [branch]

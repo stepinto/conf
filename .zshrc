@@ -39,7 +39,7 @@ alias gti=git
 export NODE_PATH=/usr/lib/node_modules
 alias git="nocorrect git"
 alias tmux="tmux -2"
-export EDITOR=/usr/bin/vim
+export EDITOR=$(which vim)
 alias vi=vim
 
 if [ -f $HOME/.zshrc_local ]; then
