@@ -1,6 +1,6 @@
 [user]
-	name = chao.shi
-	email = chao.shi@alibaba-inc.com
+	name = Chao Shi
+	email = stepinto@live.com
 [color]
 	diff = auto
 	status = auto
@@ -49,4 +49,8 @@
 	templatedir = /home/chaoshi/.git-core/templates
 [branch]
     autosetuprebase = always
-
+[sendemail]
+    smtpencryption = tls
+    smtpuser = stepinto@live.com
+    smtpserverport = 587
+    smtpserver = smtp.live.com
