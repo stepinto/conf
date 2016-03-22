@@ -98,4 +98,3 @@ if has('nvim')
 endif
 
 set mouse=v
->>>>>>> 6bdc9a8a7f5e4fc4454efe5f14826f5bf61dbe5b
