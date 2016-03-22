@@ -68,3 +68,6 @@ cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+
+" GUI options
+set guioptions=a
