@@ -62,6 +62,7 @@ syntax on
 nmap <F7> :make<CR>:copen<CR><C-W><C-P>
 nmap <F8> :call Cpplint()<CR>
 nmap <F3> :UniteWithProjectDir -start-insert file_rec/async:!<CR>
+nmap <F4> :grep <cword> -r .<CR><CR>:copen<CR>
 nmap gd :YcmCompleter GoTo<CR>
 nmap cn :cnext<CR>
 nmap cp :cprev<CR>

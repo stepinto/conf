@@ -29,7 +29,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast)
+plugins=(gitfast autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,8 +39,9 @@ alias gti=git
 export NODE_PATH=/usr/lib/node_modules
 alias git="nocorrect git"
 alias tmux="tmux -2"
-export EDITOR=$(which nvim)
-alias vi=$EDITOR
+export EDITOR=$(which vim)
+alias vi=vim
+export PS1='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)$(__git_ps1) %_$(prompt_char)%{$reset_color%} '
 
 if [ -f $HOME/.zshrc_local ]; then
   source $HOME/.zshrc_local
