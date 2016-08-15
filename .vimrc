@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'shougo/unite.vim'
+" Plugin 'shougo/unite.vim'
 Plugin 'shougo/vimproc.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'sprsquish/thrift.vim'
@@ -23,6 +23,8 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'derekwyatt/vim-scala'
+" Plugin 'KuoE0/vim-scavenger'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'file:///home/chaoshi/.vim/apsara_log'
 
 call vundle#end()            " required
@@ -61,8 +63,8 @@ syntax on
 
 nmap <F7> :make<CR>:copen<CR><C-W><C-P>
 nmap <F8> :call Cpplint()<CR>
-nmap <F3> :UniteWithProjectDir -start-insert file_rec/async:!<CR>
-nmap <F4> :grep <cword> -r .<CR><CR>:copen<CR>
+" nmap <F3> :UniteWithProjectDir -start-insert file_rec/async:!<CR>
+nmap <F4> :grep -Ir <cword> .<CR><CR>:copen<CR>
 nmap gd :YcmCompleter GoTo<CR>
 nmap cn :cnext<CR>
 nmap cp :cprev<CR>
@@ -84,7 +86,8 @@ cnoremap <Esc>f <S-Right>
 
 " GUI options
 set guioptions=a
-set makeprg=nice\ /usr/ali/bin/python\ /home/chaoshi/scons/scons.py\ -U\ -j24
+" set makeprg=nice\ /usr/ali/bin/python\ /home/chaoshi/scons/scons.py\ -U\ -j24
+set makeprg=make\ -j20
 
 " Highlight current line
 set cursorline
@@ -99,3 +102,15 @@ if has('nvim')
 endif
 
 set mouse=v
+
+" Clean trailing whitespaces
+let g:scavenger_auto_clean_up_on_write=1
+
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn))|build|__gerrit_verify$',
+  \ 'file': '\v\.(exe|so|dll|o)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
