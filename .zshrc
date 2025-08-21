@@ -41,7 +41,6 @@ alias git="nocorrect git"
 alias tmux="tmux -2"
 export EDITOR=$(which vim)
 alias vi=vim
-export PS1='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)$(__git_ps1) %_$(prompt_char)%{$reset_color%} '
 alias mt="make test"
 
 if [ -f $HOME/.zshrc_local ]; then
